@@ -9,8 +9,18 @@ Olvasd be az f1.txt adatait, majd oldd meg az alábbi feladatokat!
 A megoldott feladatokat a kiirt_adatok nevű mappába hozd létre statisztika.txt néven!
 """
 
+with open('beolvasando_adatok/f1.txt', 'r') as f:
+    next(f)
+    versenyzok = [sor.strip().split(';') for sor in f]
+    osszes = len(versenyzok)
+    gyoztes_futamok = versenyzok[2]
 
-print("A beolvasott fájlban összesen ____ versenyző szerepel.")
+print(versenyzok)
+print(gyoztes_futamok)
+
+
+
+print(f"A beolvasott fájlban összesen {osszes} versenyző szerepel.")
 print("A legtöbb futamot nyert versenyző: ____")
 print("A legtöbb futamot teljesített versenyző: ____")
 print("Az átlagos futamszám: ____")
