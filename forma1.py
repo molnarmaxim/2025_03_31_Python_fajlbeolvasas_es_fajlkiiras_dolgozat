@@ -10,6 +10,7 @@ A megoldott feladatokat a kiirt_adatok nevű mappába hozd létre statisztika.tx
 """
 versenyzok = []
 with open('beolvasando_adatok/f1.txt', 'r') as f:
+    print('× f1.txt beolvasva ×')
     next(f)
     for sor in f:
         adatok = sor.strip().split(';')
@@ -50,8 +51,10 @@ w_atlag = f"Az átlagos futamszám: {atlag:.0f}"
 print(f" {w_osszes},\n {w_gyoztes},\n {w_legtobb},\n {w_atlag}")
 
 with open('kiirt_adatok/statisztika.txt', 'w', encoding='utf-8') as kiirando:
+    print("× statisztika.txt fájl kiírása ×")
     kiirando.write(str(w_osszes))
     kiirando.write(str("\n"+ w_gyoztes))
     kiirando.write(str("\n"+ w_legtobb))
     kiirando.write(str("\n"+ w_atlag))
     print("× statisztika.txt fájl sikeresen kiírva ×")
+    print("Fájl helye: kiirt_adatok/statisztika.txt")
