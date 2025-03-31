@@ -8,6 +8,11 @@ Olvasd be az f1.txt adatait, majd oldd meg az alábbi feladatokat!
 
 A megoldott feladatokat a kiirt_adatok nevű mappába hozd létre statisztika.txt néven!
 """
+
+
+import os
+import time
+
 versenyzok = []
 with open('beolvasando_adatok/f1.txt', 'r') as f:
     print('× f1.txt beolvasva ×')
@@ -58,3 +63,6 @@ with open('kiirt_adatok/statisztika.txt', 'w', encoding='utf-8') as kiirando:
     kiirando.write(str("\n"+ w_atlag))
     print("× statisztika.txt fájl sikeresen kiírva ×")
     print("Fájl helye: kiirt_adatok/statisztika.txt")
+    
+time.sleep(2)
+os.system('notepad.exe' + ' kiirt_adatok/statisztika.txt')
