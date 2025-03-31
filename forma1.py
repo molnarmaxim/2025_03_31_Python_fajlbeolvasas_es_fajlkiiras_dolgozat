@@ -12,6 +12,7 @@ A megoldott feladatokat a kiirt_adatok nevű mappába hozd létre statisztika.tx
 
 import os
 import time
+import getpass
 
 versenyzok = []
 with open('beolvasando_adatok/f1.txt', 'r') as f:
@@ -61,8 +62,10 @@ with open('kiirt_adatok/statisztika.txt', 'w', encoding='utf-8') as kiirando:
     kiirando.write(str("\n"+ w_gyoztes))
     kiirando.write(str("\n"+ w_legtobb))
     kiirando.write(str("\n"+ w_atlag))
+    kiirando.write("\n\nKiírás dátuma: " + time.asctime())
+    kiirando.write("\n\n" + getpass.getuser())
     print("× statisztika.txt fájl sikeresen kiírva ×")
-    print("Fájl helye: kiirt_adatok/statisztika.txt")
-    
+    print("\n Fájl helye: kiirt_adatok/statisztika.txt")
+
 time.sleep(2)
 os.system('notepad.exe' + ' kiirt_adatok/statisztika.txt')
